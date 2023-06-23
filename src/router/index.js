@@ -1,14 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-// Rotas para navegar no site
+const routes = [
+  { path: "/conversor", component: () => import("../views/ConversorPage.vue") },
+  { path: "/countrySearch", component: () => import("../views/CountrySearch.vue") },
+];
 
-const router = createRouter ({
-    history: createWebHistory(),
-    routes: [
-        { path: "/register", component: () => import ("../views/Register.vue") },
-        { path: "/login", component: () => import ("../views/Login.vue") },
-        { path: "/dashboard", component: () => import ("../views/Dashboard.vue") },
-    ],
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
 });
 
 export default router;

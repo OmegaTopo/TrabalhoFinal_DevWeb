@@ -61,7 +61,7 @@
       if (population >= 1000000000) {
         return (population / 1000000000).toLocaleString() + " billion";
       } else if (population >= 1000000) {
-        return (population / 1000000).toLocaleString() + " millions";
+        return (population / 1000000).toLocaleString() + " million";
       } else {
         return population.toLocaleString();
       }
@@ -86,16 +86,16 @@
   flex-direction: column;
   align-items: center;
   width: 350px;
-  height: 450px;
+  height: 477px;
   background-color: #ffffff;
-  margin-top: 30px;
   padding: 4em;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 7%;
 }  
   .flag-img {
     display: block;

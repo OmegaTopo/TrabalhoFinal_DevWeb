@@ -39,9 +39,44 @@ export default {
 </script>
 
 <style scoped>
-.conversorMoeda{
+.conversorMoeda {
     padding: 20px;
+    max-height: 180px;
     max-width: 300px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.conversorMoeda h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.conversorMoeda input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.conversorMoeda input[type="button"] {
+    width: 273px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.conversorMoeda h2:last-child {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
 }
 </style>

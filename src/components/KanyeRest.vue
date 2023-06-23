@@ -1,10 +1,9 @@
 <template>
     <div class="KanyeRest">
-      <h1>Ouça a palavra de Kanye West</h1>
-      <input type="button" v-on:click="emitir" value="ouvir" />
+      <input class="GOAT" type="button" v-on:click="emitir" value="ouvir" />
       <br />
       <div v-if="response">
-        <p>{{response.quote}}</p>
+        <p class="Resposta">{{response.quote}}</p>
       </div>
     </div>
 </template>
@@ -34,12 +33,27 @@
 </script>
   
 <style scoped>
-    .kanye{
+  @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+    .KanyeRest{
     padding: 20px;
-    max-width: 300px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 100%;
     text-align: center;
-    margin: auto;
+    }
+    .GOAT {
+      width: 100px;
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;    
+    }
+    .Resposta{
+      color: white;
+      font-style: italic;
+      font-size: 30px;
+      font-family: 'Cedarville Cursive', cursive;
     }
 </style>
   

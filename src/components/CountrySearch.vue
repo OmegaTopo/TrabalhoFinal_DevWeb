@@ -1,14 +1,15 @@
 <template>
-    <header class="country-search-header">
-      <div class="search-wrapper">
-        <input type="text" id="country-inp" placeholder="Entre com um nome de país em inglês..."
-        v-model="countryName" @click="hideErrorMessage"/>
+  <header class="country-search-header">
+    <div class="search-wrapper">
+      <input type="text" id="country-inp" placeholder="Entre com um nome de país em inglês..."
+        v-model="countryName" @click="hideErrorMessage" />
+      <div class="button-wrapper">
         <button id="search-btn" @click="searchCountry">Search</button>
       </div>
-      <div v-if="showErrorMessage" class="error-message">{{ errorMessage }}</div>
-    </header>
-  </template>
-  
+    </div>
+    <div v-if="showErrorMessage" class="error-message">{{ errorMessage }}</div>
+  </header>
+</template>
   <script>
   export default {
     name: "CountrySearch",
@@ -32,10 +33,10 @@
                 return;
             }
 
-            const finalURL = `https://restcountries.com/v3.1/name/${this.countryName}?fullText=true`;
-            console.log(finalURL);
+            const apiURL = `https://restcountries.com/v3.1/name/${this.countryName}?fullText=true`;
+            console.log(apiURL);
 
-            fetch(finalURL)
+            fetch(apiURL)
                 .then((response) => {
                 if (!response.ok) {
                     throw new Error("Não foi possível encontrar o país.");
@@ -72,6 +73,7 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
 .country-search-header {
   position: fixed;
   top: 0;
@@ -82,37 +84,43 @@
   padding: 1em;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
+
 .search-wrapper {
   display: grid;
   grid-template-columns: 9fr 3fr;
   gap: 1.25em;
 }
+
 .search-wrapper button {
   font-size: 1em;
-  background-color: #e04646;
+  background-color: #4caf50;
   color: #ffffff;
   padding: 0.8em 0;
   border: none;
-  border-radius: 1.5em;
+  border-radius: 0.5em;
   cursor: pointer;
+  width: 450px;
 }
+
 .search-wrapper button:hover {
-  background-color: #b50404;
+  background-color: #68bb89;
 }
+
 .search-wrapper input {
   font-size: 1em;
   padding: 0 0.62em;
   border: none;
-  border-bottom: 2px solid #e04646;
+  border-bottom: 2px solid #4caf50;
   outline: none;
   color: #222a43;
 }
+
 .error-message {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #e04646;
+  background-color:#4caf50;
   color: #ffffff;
   padding: 1em;
   border-radius: 8px;
